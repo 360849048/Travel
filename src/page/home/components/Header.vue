@@ -7,16 +7,21 @@
       <span class="iconfont">&#xe60a;</span>
       输入需要搜索的内容
     </div>
-    <div class="header-right">
-      城市
-      <span class="iconfont icon-city">&#xe64a;</span>
-    </div>
+    <router-link to='/city'>
+      <div class="header-right">
+        {{this.city}}
+        <span class="iconfont icon-city">&#xe64a;</span>
+      </div>
+    </router-link>
   </div>
 </template>
 
 <script>
   export default {
-    name: "my-header"
+    name: "HomeHeader",
+    props:{
+      city: String
+    }
   }
 </script>
 
@@ -25,8 +30,8 @@
 
   .header{
     font-size: .3rem;
-    line-height: .86rem;
-    /*height: .86rem;*/
+    line-height: $headerHeight;
+    height: $headerHeight;
     display: flex;
     background: $bgColor;
     color: #fff;
@@ -50,6 +55,7 @@
     .header-right{
       width: 1.24rem;
       text-align: center;
+      color: #fff;
       .icon-city{
         margin-left: -.04rem;
         font-size: .2rem;

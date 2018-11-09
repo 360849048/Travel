@@ -1,0 +1,102 @@
+{
+"city": "余姚",
+"swiperList": [{
+    "id": 1,
+    "imgUrl": "/static/img/1.jpg"
+  },
+  {
+    "id": 2,
+    "imgUrl": "/static/img/2.jpg"
+  }],
+  "iconsList": [{
+    "id": 1,
+    "imgUrl": "/static/img/01.png",
+    "desc": "热门景点"
+  },{
+    "id": 2,
+    "imgUrl": "/static/img/02.png",
+    "desc": "影视基地"
+  },{
+    "id": 3,
+    "imgUrl": "/static/img/03.png",
+    "desc": "宁波比游"
+  },{
+    "id": 4,
+    "imgUrl": "/static/img/04.png",
+    "desc": "赏秋色"
+  },{
+    "id": 5,
+    "imgUrl": "/static/img/05.png",
+    "desc": "一日游"
+  },{
+    "id": 6,
+    "imgUrl": "/static/img/06.png",
+    "desc": "横店影视城"
+  },{
+    "id": 7,
+    "imgUrl": "/static/img/07.png",
+    "desc": "普陀山"
+  },{
+    "id": 8,
+    "imgUrl": "/static/img/08.png",
+    "desc": "象山影视城"
+  },{
+    "id": 9,
+    "imgUrl": "/static/img/09.png",
+    "desc": "打卡圣地"
+  },{
+    "id": 10,
+    "imgUrl": "/static/img/10.png",
+    "desc": "全部玩乐"
+  }],
+"recommendList": [{
+	  "id": 1,
+	  "imgUrl": "http://img1.qunarzz.com/sight/p0/1604/a8/a81673c5f10d323290.water.jpg_200x200_29e239f2.jpg",
+	  "title": "浙东小九寨",
+	  "desc": "位于大隐镇的天然氧吧",
+	  "price": "45"
+	},{
+	  "id": 2,
+	  "imgUrl": "http://img1.qunarzz.com/sight/p0/1605/52/525ddf1c4ea1e22e90.img.jpg_200x200_d7ca9d71.jpg",
+	  "title": "象山影视城",
+	  "desc": "浙东影视基地，小伙伴热推景点",
+	  "price": "70"
+	},{
+	  "id": 3,
+	  "imgUrl": "http://img1.qunarzz.com/sight/p0/1603/41/418c3ea222ef877c90.water.jpg_200x200_9a1d64f1.jpg",
+	  "title": "宁波五龙潭",
+	  "desc": "浙东五龙潭，潭潭有灵性",
+	  "price": "45"
+	},{
+	  "id": 4,
+	  "imgUrl": "http://img1.qunarzz.com/sight/p0/1512/3d/3df36519af16757990.img.jpg_200x200_f3bb5832.jpg",
+	  "title": "溪口景区",
+	  "desc": "四明山南麓风景区，这里特别受欢迎哈",
+	  "price": "80"
+    }],
+"weekendList": [{
+	  "id": 1,
+	  "imgUrl": "http://img1.qunarzz.com/sight/source/1505/b2/5e303795b9aadf.jpg_r_640x214_50ec7a9c.jpg",
+	  "title": "宁波必游TOP10",
+	  "desc": "宁波美腻到骨子里，不可言喻",
+	  "price": "45"
+	},{
+	  "id": 2,
+	  "imgUrl": "http://img1.qunarzz.com/sight/source/1505/8d/515b8d66615759.jpg_r_640x214_1b965305.jpg",
+	  "title": "古村古镇古城",
+	  "desc": "品味宁波的古老文化",
+	  "price": "70"
+	},{
+	  "id": 3,
+	  "imgUrl": "http://img1.qunarzz.com/sight/source/1505/b7/7482fcba9424fe.jpg_r_640x214_ae13d3ab.jpg",
+	  "title": "户外自由行",
+	  "desc": "爬山？赏花？烧烤？周末想干嘛都行",
+	  "price": "45"
+	},{
+	  "id": 4,
+	  "imgUrl": "http://img1.qunarzz.com/sight/source/1606/18/fccb1a2f45f742.jpg_r_640x214_55564c3f.jpg",
+	  "title": "绍兴必游TOP10",
+	  "desc": "文物之邦，鱼米之乡",
+	  "price": "80"
+}]
+}

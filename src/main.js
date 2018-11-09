@@ -5,8 +5,12 @@ import App from './App'
 import router from './router'
 import '@/assets/style/mainStyle.css'
 import '@/assets/style/iconfont.css'
+import VueAwesomeSwiper from 'vue-awesome-swiper'
+import 'swiper/dist/css/swiper.css'
 
-Vue.config.productionTip = false
+
+Vue.config.productionTip = false;
+Vue.use(VueAwesomeSwiper);
 
 /* eslint-disable no-new */
 new Vue({

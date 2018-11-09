@@ -1,0 +1,12 @@
+@mixin ellipsis(){
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
+@mixin titleStyle(){
+  background: #eee;
+  line-height: .52rem;
+  text-indent: .2rem;
+  font-size: .24rem;
+  color: #666;
+}
