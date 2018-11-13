@@ -2,13 +2,13 @@
   <div class="city">
     <div class="header-area">
       <city-header/>
-      <city-search/>
+      <city-search :cityList="cityList" />
     </div>
     <!--<div class="city-area">-->
       <!--<city-hot :list="hotCities"/>-->
-      <!--<city-all :list="cityList"/>-->
+      <!--<city-all :list="cityItemList"/>-->
     <!--</div>-->
-    <city-list :cityList="cityList" :hotCities="hotCities" :curLetter="curLetter"/>
+    <city-list :cityList="cityItemList" :hotCities="hotCities" :curLetter="curLetter"/>
     <city-alphabet :letterList="letterList" @letterchange="handleLetterChange"/>
   </div>
 </template>
@@ -34,8 +34,9 @@
     },
     data(){
       return {
-        cityList: [],
+        cityItemList: [],
         letterList: [],
+        cityList: [],
         hotCities: [],
         curLetter: 'A'
       }
@@ -50,10 +51,13 @@
       },
       dealRetData(res){
         let data = res.data;
-        this.cityList = data.allCities;
+        this.cityItemList = data.allCities;
         this.hotCities = data.hotCities;
-        for (let item of this.cityList){
+        for (let item of this.cityItemList){
           this.letterList.push(item['title']);
+          for (let city of item.lists){
+            this.cityList.push(city);
+          }
         }
       },
       handleLetterChange(e){
@@ -71,7 +75,7 @@
     left: 0;
     top: 0;
     width: 100%;
-    z-index: 100;
+    z-index: 1;
   }
   .city-area{
     margin-top: $citySearchHeight + $headerHeight;
