@@ -12,7 +12,8 @@
         <li
           v-for="city in searchResult"
           :key="city"
-          class="city-item">{{city}}
+          class="city-item"
+          @click="handleClickOnCity(city)">{{city}}
         </li>
         <li v-show="hasNoData" class="no-city">
           没有找到任何城市
@@ -35,7 +36,7 @@
         searchText: '',
         searchResult: [],
         timer: null,
-        hasNoData: true
+        hasNoData: false
       }
     },
     methods: {
@@ -48,7 +49,11 @@
           }
         }
         this.hasNoData = !this.searchResult.length;
-      }
+      },
+      handleClickOnCity(city){
+        this.$store.dispatch('cityChange', city);
+        this.$router.push('/');
+      },
     },
     watch: {
       searchText(){
@@ -61,7 +66,7 @@
       }
     },
     mounted(){
-      this.scroll = new BScroll(this.$refs.content);
+      this.scroll = new BScroll(this.$refs.content, {click: true});
     }
   }
 </script>
@@ -110,6 +115,4 @@
       color: #666;
     }
   }
-
-
 </style>

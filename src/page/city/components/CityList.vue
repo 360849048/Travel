@@ -5,7 +5,7 @@
         <div class="header">当前城市</div>
         <div class="cities-area">
           <div class="city-wrapper">
-            <div class="city">余姚</div>
+            <div class="city">{{$store.state.city}}</div>
           </div>
         </div>
       </div>
@@ -13,7 +13,11 @@
       <div class="area">
         <div class="header">热门城市</div>
         <div class="cities-area">
-          <div class="city-wrapper" v-for="(hotCity, index) in hotCities" :key="index">
+          <div
+            class="city-wrapper"
+            v-for="(hotCity, index) in hotCities"
+            :key="index"
+            @click="handleClickOnCity(hotCity)">
             <div class="city">{{hotCity}}</div>
           </div>
         </div>
@@ -24,7 +28,11 @@
         <div class="city-category" v-for="item in cityList" :key="item.title" :ref="item.title">
           <div class="header">{{item.title}}</div>
           <div class="cities-area">
-            <div class="city-one-line" v-for="name in item.lists" :key="name">
+            <div
+              class="city-one-line"
+              v-for="name in item.lists"
+              :key="name"
+              @click="handleClickOnCity(name)">
               <div class="city">{{name}}</div>
             </div>
           </div>
@@ -45,6 +53,12 @@
       cityList: Array,
       hotCities: Array,
       curLetter: String
+    },
+    methods: {
+      handleClickOnCity(city){
+        this.$store.dispatch('cityChange', city);
+        this.$router.push('/');
+      },
     },
     mounted(){
       this.scroll = new BScroll(this.$refs.wrapper, {click: true});
