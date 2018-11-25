@@ -5,7 +5,7 @@
         <div class="header">当前城市</div>
         <div class="cities-area">
           <div class="city-wrapper">
-            <div class="city">{{$store.state.city}}</div>
+            <div class="city">{{curCity}}</div>
           </div>
         </div>
       </div>
@@ -46,6 +46,7 @@
 
 <script>
   import BScroll from 'better-scroll'
+  import { mapState, mapActions } from 'vuex'
 
   export default {
     name: "city-list",
@@ -56,9 +57,15 @@
     },
     methods: {
       handleClickOnCity(city){
-        this.$store.dispatch('cityChange', city);
+        this.cityChange(city);
         this.$router.push('/');
       },
+      ...mapActions(['cityChange'])
+    },
+    computed: {
+      ...mapState({
+        curCity: 'city'
+      })
     },
     mounted(){
       this.scroll = new BScroll(this.$refs.wrapper, {click: true});
