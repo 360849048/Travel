@@ -4,7 +4,12 @@
       猜你喜欢
     </div>
     <ul>
-      <li class="rec-item" v-for="rec in list" :key="rec.id">
+      <router-link
+        tag="li"
+        class="rec-item"
+        v-for="rec in list"
+        :key="rec.id"
+        :to="'/detail/' + rec.id">
         <div class="rec-img-wrapper">
           <img class="rec-img" :src="rec.imgUrl" alt="sorry">
         </div>
@@ -16,7 +21,7 @@
             <span class="rec-price-deco">起</span>
           </div>
         </div>
-      </li>
+      </router-link>
     </ul>
     <div class="more">
       查看所有产品
