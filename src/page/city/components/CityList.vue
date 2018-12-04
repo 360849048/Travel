@@ -68,7 +68,7 @@
       })
     },
     mounted(){
-      this.scroll = new BScroll(this.$refs.wrapper, {click: true});
+      this.scroll = new BScroll(this.$refs.wrapper, {click: true, mouseWheel: true});
     },
     watch: {
       curLetter(){

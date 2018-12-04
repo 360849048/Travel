@@ -1,19 +1,44 @@
 <template>
-  <div class="banner">
-    <img class="banner-img" src="//img1.qunarzz.com/sight/p0/1604/a8/a81673c5f10d323290.water.jpg_600x330_9e2e7150.jpg" />
+  <div class="banner" @click="showGallary = !showGallary">
+    <img class="banner-img" :src="imgList[0]" />
     <div class="img-number-wrapper">
       <span class="iconfont img-logo">&#xe616;</span>
-      <span class="img-number">6</span>
+      <span class="img-number">{{imgNum}}</span>
     </div>
     <div class="name-info-wrapper">
       <div class="name-info">浙东小九寨</div>
     </div>
+    <transition name="fade">
+      <common-gallary
+        v-show="showGallary"
+        :list="imgList">
+      </common-gallary>
+    </transition>
   </div>
 </template>
 
 <script>
+  import CommonGallary from '@/common/gallary/Gallary'
+
   export default {
-    name: "DetailBanner"
+    name: "DetailBanner",
+    components: {
+      CommonGallary
+    },
+    data () {
+      return {
+        showGallary: false,
+        imgList: [
+          "http://img1.qunarzz.com/sight/p0/1604/a8/a81673c5f10d323290.water.jpg_r_800x800_84095006.jpg",
+          "http://img1.qunarzz.com/sight/p0/201312/17/b8e358b99838a53db57c2fa42acc97b8.jpg_r_800x800_cd66705a.jpg",
+        ]
+      }
+    },
+    computed: {
+      imgNum () {
+        return this.imgList.length;
+      }
+    }
   }
 </script>
 
@@ -67,5 +92,11 @@
         text-shadow: 1px 2px rgba(0, 0, 0, .5);
       }
     }
+  }
+  .fade-enter-active, .fade-leave-active {
+    transition: all .2s;
+  }
+  fade-enter, .fade-leave-to {
+    opacity: 0;
   }
 </style>

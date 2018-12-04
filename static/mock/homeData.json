@@ -3,8 +3,7 @@
 "swiperList": [{
     "id": 1,
     "imgUrl": "/static/img/1.jpg"
-  },
-  {
+  }, {
     "id": 2,
     "imgUrl": "/static/img/2.jpg"
   }],

@@ -3,9 +3,10 @@ import Router from 'vue-router'
 import Home from '@/page/home/Home'
 import City from '@/page/city/City'
 import Detail from '@/page/detail/Detail'
+import CommonGallary from '@/common/gallary/Gallary'
 
 
-Vue.use(Router)
+Vue.use(Router);
 
 export default new Router({
   routes: [
@@ -21,6 +22,10 @@ export default new Router({
       path: '/detail/:id',
       name: 'Detail',
       component: Detail
+    }, {
+      path: '/test/gallary',
+      name: 'CommonGallary',
+      component: CommonGallary
     }
   ]
 })
