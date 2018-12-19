@@ -27,5 +27,8 @@ export default new Router({
       name: 'CommonGallary',
       component: CommonGallary
     }
-  ]
+  ],
+  scrollBehavior (to, from, savedPosition) {
+    return { x: 0, y: 0 }
+  }
 })

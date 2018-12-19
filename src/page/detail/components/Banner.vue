@@ -1,17 +1,17 @@
 <template>
   <div class="banner" @click="showGallary = !showGallary">
-    <img class="banner-img" :src="imgList[0]" />
+    <img class="banner-img" :src="list[0]" />
     <div class="img-number-wrapper">
       <span class="iconfont img-logo">&#xe616;</span>
       <span class="img-number">{{imgNum}}</span>
     </div>
     <div class="name-info-wrapper">
-      <div class="name-info">浙东小九寨</div>
+      <div class="name-info">{{name}}</div>
     </div>
     <transition name="fade">
       <common-gallary
         v-show="showGallary"
-        :list="imgList">
+        :list="list">
       </common-gallary>
     </transition>
   </div>
@@ -25,18 +25,18 @@
     components: {
       CommonGallary
     },
+    props: {
+      name: String,
+      list: Array,
+    },
     data () {
       return {
         showGallary: false,
-        imgList: [
-          "http://img1.qunarzz.com/sight/p0/1604/a8/a81673c5f10d323290.water.jpg_r_800x800_84095006.jpg",
-          "http://img1.qunarzz.com/sight/p0/201312/17/b8e358b99838a53db57c2fa42acc97b8.jpg_r_800x800_cd66705a.jpg",
-        ]
       }
     },
     computed: {
       imgNum () {
-        return this.imgList.length;
+        return this.list.length;
       }
     }
   }

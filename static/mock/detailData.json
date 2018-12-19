@@ -1,0 +1,15 @@
+{
+  "id": 1,
+  "name": "浙东小九寨",
+  "imgList": ["http://img1.qunarzz.com/sight/p0/1604/a8/a81673c5f10d323290.water.jpg_r_800x800_84095006.jpg",
+    "http://img1.qunarzz.com/sight/p0/201312/17/b8e358b99838a53db57c2fa42acc97b8.jpg_r_800x800_cd66705a.jpg"],
+  "ticketList": [
+    {"title": "成人票", "children": [
+      {"title": "场馆一"},
+      {"title": "场馆二"}
+    ]},
+    {"title": "学生票"},
+    {"title": "儿童票"},
+    {"title": "特惠票"}
+  ]
+}

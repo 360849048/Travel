@@ -1,15 +1,16 @@
 <template>
   <div class="detail">
-    <detail-banner />
-    <detail-header />
-    <detail-list :list="list" />
+    <detail-banner :name="name" :list="imgList" />
+    <detail-header :name="name" />
+    <detail-list :list="ticketList" />
   </div>
 </template>
 
 <script>
-  import DetailBanner from '@/page/detail/components/Banner'
-  import DetailHeader from '@/page/detail/components/Header'
-  import DetailList from '@/page/detail/components/List'
+  import DetailBanner from './components/Banner'
+  import DetailHeader from './components/Header'
+  import DetailList from './components/List'
+  import axios from 'axios'
 
   export default {
     name: "detail",
@@ -20,16 +21,26 @@
     },
     data () {
       return {
-        list: [
-          {title: '成人票', children: [
-              {title: '场馆一'},
-              {title: '场馆二'}
-            ]},
-          {title: '学生票'},
-          {title: '儿童票'},
-          {title: '特惠票'}
-        ]
+        name: '',
+        ticketList: [],
+        imgList: []
       }
+    },
+    methods: {
+      dealRetData (res) {
+        res = res.data;
+
+        this.name = res.name;
+        this.ticketList = res.ticketList;
+        this.imgList = res.imgList;
+      }
+    },
+    mounted () {
+      axios.get('/api/detailData.json', {
+        params: {
+          id: this.$route.params.id
+        }
+      }).then(this.dealRetData);
     }
   }
 </script>

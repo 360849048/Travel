@@ -7,7 +7,7 @@
       <router-link tag="div" to="/" class="city-back">
         <span class="iconfont detail-back">&#xe605;</span>
       </router-link>
-      浙东小九寨
+      {{name}}
     </div>
   </div>
 </template>
@@ -15,6 +15,9 @@
 <script>
   export default {
     name: "DetailHeader",
+    props: {
+      name: String
+    },
     data () {
       return {
         showAbs: true,
@@ -33,7 +36,6 @@
     },
     activated () {
       window.addEventListener('scroll', this.handleScroll);
-      document.documentElement.scrollTop = 0;
     },
     deactivated () {
       window.removeEventListener('scroll', this.handleScroll);
