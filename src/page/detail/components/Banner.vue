@@ -8,22 +8,24 @@
     <div class="name-info-wrapper">
       <div class="name-info">{{name}}</div>
     </div>
-    <transition name="fade">
+    <fade>
       <common-gallary
         v-show="showGallary"
         :list="list">
       </common-gallary>
-    </transition>
+    </fade>
   </div>
 </template>
 
 <script>
   import CommonGallary from '@/common/gallary/Gallary'
+  import Fade from '@/common/fade/Fade'
 
   export default {
     name: "DetailBanner",
     components: {
-      CommonGallary
+      CommonGallary,
+      Fade
     },
     props: {
       name: String,
@@ -96,7 +98,7 @@
   .fade-enter-active, .fade-leave-active {
     transition: all .2s;
   }
-  fade-enter, .fade-leave-to {
+  .fade-enter, .fade-leave-to {
     opacity: 0;
   }
 </style>
